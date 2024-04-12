@@ -15,6 +15,6 @@ export class GameController {
     @Param('sessionId') sessionId: string,
     @Body() coordinates: Coordinates,
   ) {
-    return this.gameService.setGameBoard(sessionId, coordinates);
+    return this.gameService.setGameState(sessionId, coordinates);
   }
 }
