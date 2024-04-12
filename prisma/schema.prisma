@@ -17,5 +17,6 @@ model Game {
   sessionId1          String   @unique
   sessionId2          String   @unique
   lastActionTimestamp DateTime @default(now())
-  state               String
+  state               Json
+  currentPlayer       String   @default("X")
 }
