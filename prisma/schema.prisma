@@ -3,19 +3,19 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
 model LobbyEntry {
   sessionId String   @id @default(uuid())
-  timestamp DateTime
+  timestamp DateTime @default(now())
 }
 
 model Game {
   id                  String   @id @default(uuid())
   sessionId1          String   @unique
   sessionId2          String   @unique
-  lastActionTimestamp DateTime
+  lastActionTimestamp DateTime @default(now())
   state               String
 }
