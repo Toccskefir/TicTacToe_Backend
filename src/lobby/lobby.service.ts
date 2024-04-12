@@ -22,7 +22,7 @@ export class LobbyService {
       const players: Prisma.GameCreateInput = {
         sessionId1: tableRows[0].sessionId,
         sessionId2: sessionId,
-        state: JSON.stringify(gameBoard),
+        state: gameBoard,
       };
       await this.prismaService.game.create({
         data: players,
